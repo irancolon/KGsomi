@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somi Enterprises | Administrative & Business Support</title>
+    
+    <!-- Google Fonts for Elegant Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- COLOR PALETTE --- */
+        :root {
+            --lightest-pink: #FFEBEC;
+            --light-pink: #F6D3D1;
+            --medium-pink: #D8A7AA;
+            --dark-pink: #E9CDCC;
+            --stark-black: #000000;
+            --text-dark: #222222;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, .brand-name {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--light-pink);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .brand-name {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .brand-name span {
+            color: var(--medium-pink);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        .nav-links a:hover {
+            color: var(--medium-pink);
+            transition: 0.3s;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            color: var(--stark-black);
+        }
+
+        /* --- HERO SECTION (Glitter/Silver Vibe) --- */
+        .hero {
+            /* A high-end silver/glitter gradient base with a subtle image overlay */
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(216, 167, 170, 0.4)), 
+                        url('https://images.unsplash.com/photo-1518655048521-f130df041f66?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            border-bottom: 5px solid var(--medium-pink);
+        }
+
+        .hero-content {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.85); /* Frosted glass effect */
+            padding: 40px;
+            border-radius: 10px;
+            border-left: 6px solid var(--stark-black);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--medium-pink);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--stark-black);
+        }
+
+        .hero h1 em {
+            color: var(--medium-pink);
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #444;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--stark-black);
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border: 2px solid var(--stark-black);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--stark-black);
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services {
+            padding: 100px 10%;
+            background-color: var(--lightest-pink);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--medium-pink);
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .service-card {
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px auto;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid var(--medium-pink);
+            box-shadow: 0 5px 15px rgba(216, 167, 170, 0.3);
+        }
+
+        .service-card i {
+            font-size: 2rem;
+            color: var(--stark-black);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--stark-black);
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* --- CONTACT / FOOTER SECTION --- */
+        .contact-section {
+            background-color: var(--stark-black);
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 10%;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--light-pink);
+        }
+
+        .contact-section .btn {
+            background-color: var(--medium-pink);
+            border-color: var(--medium-pink);
+            color: var(--stark-black);
+            margin-top: 30px;
+            font-size: 1.1rem;
+            padding: 18px 45px;
+        }
+
+        .contact-section .btn:hover {
+            background-color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .footer-info {
+            margin-top: 60px;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Hides nav on mobile for simplicity */
+            .hero h1 { font-size: 2.5rem; }
+            .hero { height: auto; padding: 100px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="brand-name">Somi <span>Enterprises</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="social-icons">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Kiara Gaddy Presents</p>
+            <h1>Unleash Your <br><em>Black Girl Magic</em> Energy.</h1>
+            <p>Professional, seamless support for all your business-related tasks. We handle the details so you can focus on building your empire.</p>
+            <a href="#contact" class="btn">Let's Get Started</a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">What I Offer</h2>
+        <p class="section-subtitle">Elevate Your Business Operations</p>
+        
+        <div class="grid-container">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-clipboard-list"></i></div>
+                <h3>Administrative Support</h3>
+                <p>Streamline your daily operations with expert organization, scheduling, and data entry.</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-diagram-project"></i></div>
+                <h3>Project Management</h3>
+                <p>Keep your initiatives on track and within budget with seamless coordination.</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-hashtag"></i></div>
+                <h3>Social Media Management</h3>
+                <p>Curate your online presence and engage your audience with strategic content.</p>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                <h3>Bookkeeping & Invoicing</h3>
+                <p>Manage your finances with precision, ensuring invoices are sent and payments are tracked.</p>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-envelope-open-text"></i></div>
+                <h3>Email Management</h3>
+                <p>Take control of your inbox. Filter, organize, and respond to correspondence professionally.</p>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-headset"></i></div>
+                <h3>Customer Service</h3>
+                <p>Provide exceptional support to your clients, maintaining your brand's high standards.</p>
+            </div>
+        </div>
+        <p style="margin-top: 50px; font-weight: 700; font-style: italic; color: var(--medium-pink);">...and much more tailored to your specific needs.</p>
+    </section>
+
+    <!-- Contact / Footer Section -->
+    <footer class="contact-section" id="contact">
+        <h2>Ready to Level Up?</h2>
+        <p>Let's connect and discuss how I can support your business growth.</p>
+        
+        <!-- Working Call Button -->
+        <a href="tel:9085904021" class="btn">
+            <i class="fa-solid fa-phone" style="margin-right: 10px;"></i> Call Now: 908-590-4021
+        </a>
+
+        <div class="footer-info">
+            <p>Email: <a href="mailto:kcgaddy00@icloud.com">kcgaddy00@icloud.com</a></p>
+            <p>Location: Flemington, NJ</p>
+            <p style="margin-top: 20px; color: #666;">&copy; 2023 Somi Enterprises. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
